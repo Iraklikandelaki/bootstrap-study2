@@ -1,1 +1,0 @@
-# bootstrap-study2
