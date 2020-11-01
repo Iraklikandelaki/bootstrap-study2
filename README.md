@@ -1,5 +1,5 @@
 
- ### Number of pages: 6.
+ ### Number of pages: 5.
  - **index.html**
  - **about.html**
   - **reserve.html**
