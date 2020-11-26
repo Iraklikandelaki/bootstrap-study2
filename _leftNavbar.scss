@@ -1,0 +1,364 @@
+body{
+    padding-left: 6vw;
+}
+.dumb-overlay{
+    position: fixed;
+    left: 0; 
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1038;
+    transition: .4s all ease;
+   
+}
+
+.dumb-overlay.opened{
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media screen and (min-width: 769px){
+
+    .nav-main2, .nav-sidebar2 ul, .nav-inner2, .nav-sidebar2{
+        display: none;
+   
+    }
+
+.nav-main{
+
+
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 6vw;
+    height: 100%;
+    background: white;
+    z-index: 1040;
+ 
+    .nav-inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .h4{
+            writing-mode: vertical-rl;
+    text-orientation: mixed;
+        }
+    
+    
+    }
+
+    .line{
+        height: 30vh;
+        width: 2px;
+        background: black;
+    }
+}
+
+.btn-toggle-nav{
+  
+    
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+
+    div{
+        height: 4px;
+        width: 40%;
+        background-color: black;
+        transform: rotate(0deg);
+    }
+
+    .line2{
+        transition: width 0.2s ease;
+        
+    }
+    &:hover{
+        .line2{
+            width: 30%;
+        }
+    }
+}
+
+
+
+
+.nav-sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -50%;
+    margin-left: 6vw;
+    height: 100vh;
+    background: white;
+    z-index: 1039;
+    width: 45vw;
+    transition: left .9s ease;
+    ul{
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        @include vollkorn();
+        list-style: none;
+
+        li{
+        position: relative;
+
+        .navActive{
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            top: 50%;
+            left: -120%;
+            background-color: black;
+            transition: width .5s ease, background-color .5s ease ;
+        }
+
+        }
+
+        li:not(.isActive){
+            .navActive{
+             
+                width: 0;
+                
+                
+            }  
+            &:hover{
+                .navActive{
+                    width: 100%;
+                    background-color: rgb(82, 82, 82) !important;
+                }
+            }
+        }
+
+
+
+        li a{
+            color: black;
+            text-decoration: none;
+        }
+
+        
+
+    }
+    
+}
+
+
+.nav-sidebar.to-right{
+    left: 0%;
+  
+  
+}
+
+
+
+// BURGER X ANIM
+
+
+.btn-toggle-nav div:nth-child(1),
+.btn-toggle-nav div:nth-child(3) {
+
+    transition: transform .35s ease-in-out;
+ }
+ 
+.btn-toggle-nav.opened div:nth-child(1) {
+     position: absolute;
+     transform: rotate(135deg);
+     opacity: 0.9;
+ }
+
+
+
+ .btn-toggle-nav.opened div:nth-child(2) {
+     height: 12px;
+     visibility: hidden;
+     background-color: transparent;
+ }
+ 
+ .btn-toggle-nav.opened div:nth-child(3) {
+     position: absolute;
+     transform: rotate(-135deg);
+     opacity: 0.9;
+ }
+ 
+ 
+
+
+
+}
+
+
+
+ 
+@media screen and (max-width: 768px){
+    body{
+        padding-left: 0;
+        padding-top: 8vh;
+    }
+    
+    nav, .nav-sidebar, .nav-inner{
+        display: none;
+    }
+    
+    .nav-sidebar2 ul, .nav-inner2{
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .nav-main2{
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        top: 0;
+        
+        width: 100%;
+        height: 8vh;
+        background: white;
+        z-index: 1040;
+    }
+    
+    .btn-toggle-nav2{
+      
+        
+        width: 100px;
+        height: 80%;
+        cursor: pointer;
+    
+        div{
+            height: 4px;
+            width: 45px;
+            background-color: black;
+            transform: rotate(0deg);
+        }
+    
+       
+    }
+    
+    
+    
+    
+    .nav-sidebar2{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        
+        height: 100%;
+        width: 100%;
+        background: white;
+        z-index: 1039;
+        width: 100%;
+        transition: top .9s ease;
+        ul{
+            height: 100%;
+            align-items: flex-end;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            @include vollkorn();
+            list-style: none;
+    
+            li{
+            position: relative;
+    
+            .navActive2{
+                position: absolute;
+                height: 5px;
+                width: 100%;
+                top: 50%;
+                left: -120%;
+                background-color: black;
+                transition: width .5s ease, background-color .5s ease ;
+            }
+    
+            }
+    
+            li:not(.isActive2){
+                .navActive2{
+                 
+                    width: 0;
+                    
+                    
+                }  
+                &:hover{
+                    .navActive2{
+                        width: 100%;
+                        background-color: rgb(82, 82, 82) !important;
+                    }
+                }
+            }
+    
+    
+    
+            li a{
+                color: black;
+                text-decoration: none;
+            }
+    
+            
+    
+        }
+        
+    }
+    
+    
+    .nav-sidebar2.to-down{
+        top: 0%;
+      
+      
+    }
+    
+    
+    
+    // BURGER X ANIM
+    
+    
+    .btn-toggle-nav2 div:nth-child(1),
+    .btn-toggle-nav2 div:nth-child(3) {
+    
+        transition: transform .35s ease-in-out;
+     }
+     
+    .btn-toggle-nav2.opened div:nth-child(1) {
+         position: absolute;
+         transform: rotate(135deg);
+         opacity: 0.9;
+     }
+    
+    
+    
+     .btn-toggle-nav2.opened div:nth-child(2) {
+         height: 5px;
+         visibility: hidden;
+         background-color: transparent;
+     }
+     
+     .btn-toggle-nav2.opened div:nth-child(3) {
+         position: absolute;
+         transform: rotate(-135deg);
+         opacity: 0.9;
+     }
+     
+     
+    
+    
+    
+    }
+    
+
+    
+ 
+ 

@@ -1,0 +1,169 @@
+@media screen and (min-width: 1001px){
+    .inner-text{
+        display: none;
+    }
+ }
+
+ @media screen and (min-width: 999px){
+
+    .pic-col, .img-incr{
+        transform: translate3d(0,0,0);
+    }
+ }
+
+@media screen and (max-width: 998px){
+    
+    #story{
+        .overlay3, .overlay4, .overlay5, .overlay6{
+            display: none;
+        }
+
+        .inner-parent{
+            display: none;
+        }
+
+    }
+    
+
+
+
+  
+
+   #gallery{
+       .inner-gallery{
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "col1"
+        "col2"
+        "col3"
+        "col4"
+        "col5"
+        "col6"
+    
+      
+  
+      
+       
+        
+        ;
+
+        .col1{
+   
+            grid-area: col1;
+ 
+        }
+        .col2{
+  
+            grid-area: col2;
+ 
+
+        }
+        .col3{
+
+            grid-area: col3;
+
+        
+        }
+        .col4{
+
+             grid-area: col4;
+
+     
+        }
+        .col5{
+
+            grid-area: col5;
+
+    
+        }
+        .col6{
+
+             grid-area: col6;
+
+  
+        }
+
+       }
+   }
+ }
+
+
+
+
+@media screen and (max-width: 768px){
+
+    #story{
+        .title{
+            font-size: 70px;
+        }
+    }
+    #footer{
+    
+        .h5{
+            border-bottom: 2px solid $red;
+            transition: all .3s;
+        }
+
+    }
+    
+    
+
+}
+
+
+@media screen and (max-width: 400px){
+    
+    #top{
+        .card-title{
+            font-size: 14px;
+        }
+        button{
+            .h3{
+             font-size: 14px ;
+            }
+            
+        }
+    }
+     
+     
+ 
+ }
+
+@media screen and(max-width: 396px){
+    #story{
+        .title{
+            font-size: 40px;
+        }
+    }
+}
+@media screen and (max-width: 350px){
+
+    #footer{
+        .foot-cols-info{
+            font-size: 13px;
+
+            i {
+                display: none;
+            }
+        }
+
+        
+
+    }
+    
+    
+
+}
+
+
+@media screen and (max-width: 298px){
+
+    #testimonials{
+        display: none !important;
+    }
+        
+    
+    }
+    
+   

@@ -1,0 +1,396 @@
+$red: #F94747;
+// $backg: #f8f6f5;
+$backg: #e9e7e6;
+$gray-600: #5f5f5f;
+$gray-800: rgb(19, 19, 19);
+$green: #198754;
+$primary-overlay: rgba(16, 17, 19, 0.4);
+$font-weight-bold: 500;
+$input-placeholder-color: rgb(143, 141, 141);
+$text-muted: rgb(107, 106, 106);
+$card-cap-bg: rgba(0, 0, 0, .8); 
+$cyan: #f0ebeb;
+$component-active-bg: $cyan;
+$input-box-shadow: none;
+$input-focus-border-color: $red;
+$link-decoration: none;
+$form-check-input-checked-bg-color: $green;
+$navbar-light-color: black;
+$navbar-light-hover-color: #F94747 ;
+$navbar-light-active-color: #F94747;
+$navbar-light-brand-color: black;
+$navbar-light-brand-hover-color: black;
+$btn-focus-box-shadow: none;
+$btn-focus-width: 0;
+$btn-active-box-shadow: none;
+// $carousel-control-opacity: 1;
+$carousel-control-prev-icon-bg:      none;
+$carousel-control-next-icon-bg:      none;
+$carousel-control-color: $red;
+$carousel-control-opacity:           1;
+
+// Date picker variables
+$dp-cell-selected-background-color: $red;
+$dp-border-radius: none;
+
+
+
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 10,
+);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+@import "../bootstrapstudy2/node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif+Caption&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+@import "../Bootstrapstudy2/node_modules/vanillajs-datepicker/sass/datepicker/";
+
+
+
+
+@mixin overlay($position){
+   
+    background: rgba(0, 0, 0, .4);
+    position: $position;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+@mixin pic-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $backg;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+@mixin vollkorn{
+font-family: 'Vollkorn', serif;
+}
+@mixin archivo{
+font-family: 'Archivo', sans-serif;
+
+}
+
+body{
+    @include archivo();
+    // padding-top: 77px;
+    position: relative;
+    overflow-x: hidden;
+    background: $backg;
+    color: #000000;
+}
+
+
+
+@import './leftNavbar';
+
+@import './scroll';
+
+
+#hero{
+   .overlay{
+        @include overlay(absolute);
+        
+    }
+
+    position: relative;
+    background: url('./img/bg-13.jpg');
+    
+    background-size: cover;
+    height: 110vh;
+    background-repeat: no-repeat;
+    background-position: 0 75%;
+
+    
+    .row-1{
+        position: relative;
+        z-index: 2;
+        height: 110vh;
+    }
+    
+    .hero-footer{
+        z-index: 2;
+        position: relative;
+       
+    }
+
+    .explore-button{
+     
+     border: 4px solid $red;
+     background: $red;
+     transition: all .3s;
+     color: white;
+
+     &:hover{
+        background: white;
+        border: 4px solid white;
+        color: $red;
+     }
+       
+    }
+    
+    .icons{
+        background: transparent;
+        
+    }
+
+    path{
+        transition: .3s all;
+    }
+    .icons:hover{
+        path{
+            fill: $red;
+        }
+       
+    }
+
+    .hero-title{
+        text-shadow: 1px 1px 1px #000;
+    }
+}
+
+.opacity-0{
+opacity: 0;
+transition: opacity .3s ease;
+}
+.opacity-1{
+    opacity: 1;
+}
+
+.img-incr{
+    height: 150%;
+    width: 150%;
+    transition: all 2s ease;
+   
+    
+}
+.img-decr{
+   height: 100%;
+   width: 100%;
+}
+
+
+#story{
+    .timeline-col{
+        height: 45vh;
+    }
+    .line{
+        height: 0vh;
+        width: 2px;
+        background: black;
+        transition: height 2s ease;
+        &.opacity-1{
+            height: 45vh;
+            
+        }
+        
+     
+    }
+    .line2, .line3, .line4{
+        height: 0vh;
+        width: 2px;
+        background: black;
+        transition: height 2s ease;
+        &.opacity-1{
+            height: 45vh;
+            
+        }
+        
+     
+    }
+
+    .date{
+        transition-delay: .3s;
+    }
+    .yom{
+        overflow: hidden;
+    }
+    .title{
+        position: relative;
+        @include vollkorn();
+        font-size: 100px;
+        color: #000000;
+        overflow: hidden;
+        
+        .overlay2{
+            @include pic-overlay();
+        }
+
+        .border-bottom{
+            position: relative;
+            z-index: 2;
+            height: 3px;
+           
+            background: black;
+            transition: width 1.5s ease;
+           &.opacity-0{
+               opacity: 0;
+               width: 0%;
+           } 
+           &.opacity-1{
+               opacity: 1;
+               width: 100%;
+           }
+        }
+        
+    }
+    
+    .pic-col{
+        position: relative;
+       overflow: hidden;
+       height: 80vh;
+      
+       .overlay3, .overlay4, .overlay5, .overlay6, .overlay7{
+        @include pic-overlay();
+    }
+          
+
+       .pic-col-inner{
+           background: url("./img/founder.jpg");
+           background-size: cover;
+           background-repeat: no-repeat;
+           
+      
+       }
+       .pic-col-inner2{
+           background: url("./img/cafe.jpg");
+           background-size: cover;
+           background-repeat: no-repeat;
+      
+       }
+       .pic-col-inner3{
+           background: url("./img/history3.jpg");
+           background-size: cover;
+           background-repeat: no-repeat;
+      
+       }
+       .pic-col-inner4{
+           background: url("./img/90s.jpg");
+           background-size: cover;
+           background-repeat: no-repeat;
+      
+       }
+     
+     
+    }
+
+    // .pic-col-last{
+    //     min-height: 80vh !important;
+    // }
+    .inner{
+        position: absolute;
+      
+        // height: 70vh;
+        // width: 45vw;
+        margin-left: 30%;
+        margin-top: -9%;
+        overflow: hidden;
+        
+       .inner-parent{
+           position: relative;
+           height: 70vh;
+           width: 45vw;
+           overflow: hidden;
+           .overlay{
+               position: absolute;
+               left: 0;
+               top: 0;
+               height: 100%;
+               width: 100%;
+               background: $backg;
+               z-index: 5;
+           }
+       }
+        .inner-inner{
+            position: relative;
+            z-index: 4;
+           
+            background: url("./img/interior2.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+   
+    }
+
+    .history-col, .history-col2, .history-col3, .history-col4{
+        overflow: hidden;
+        @include archivo();
+       
+        
+        .text-line, .text-line2, .text-line3, .text-line4{
+            span {
+                border-right: .05em solid;
+                animation: typewriterLine 1s steps(1) infinite;
+              }
+        }
+        svg{
+            position: absolute;
+            right: 0;
+            top: 0;
+           
+          
+
+        }
+    }
+}
+
+
+
+
+@keyframes typewriterLine {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+
+
+
+
+
+
+
+
+#footer{
+ overflow: hidden;
+    .h5{
+        border-bottom: 2px solid transparent;
+        transition: all .3s;
+    }
+
+    .foot-cols:hover{
+
+        .h5{
+        
+            border-bottom: 2px solid $red;
+        
+    }
+    }
+   
+}
+
+.inner-text{
+    display: block;
+}
+// MEDIA QUERIES
+
+
+@import './custombreakpoints';
+
+

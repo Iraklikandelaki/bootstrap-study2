@@ -1,0 +1,191 @@
+$backg: #e9e7e6;
+$red: #F94747;
+$gray-600: #5f5f5f;
+$gray-800: rgb(19, 19, 19);
+$green: #198754;
+$primary-overlay: rgba(16, 17, 19, 0.4);
+$font-weight-bold: 500;
+$input-placeholder-color: rgb(143, 141, 141);
+$text-muted: rgb(107, 106, 106);
+$card-cap-bg: rgba(0, 0, 0, .8); 
+$cyan: #f0ebeb;
+$component-active-bg: $cyan;
+$input-box-shadow: none;
+$input-focus-border-color: $red;
+$link-decoration: none;
+$form-check-input-checked-bg-color: $green;
+$navbar-light-color: black;
+$navbar-light-hover-color: #F94747 ;
+$navbar-light-active-color: #F94747;
+$navbar-light-brand-color: black;
+$navbar-light-brand-hover-color: black;
+$btn-focus-box-shadow: none;
+$btn-focus-width: 0;
+$btn-active-box-shadow: none;
+
+
+
+// Menu tabs
+$nav-pills-border-radius: 0;
+$nav-pills-link-active-color: none;
+$nav-pills-link-active-bg: none;
+// $card-border-color:  $red;
+
+
+
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 10,
+);
+
+
+
+@import "../bootstrapstudy2/node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif+Caption&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+@import "../Bootstrapstudy2/node_modules/vanillajs-datepicker/sass/datepicker/";
+
+
+
+
+@mixin overlay($position){
+   
+    background: rgba(0, 0, 0, .4);
+    position: $position;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+
+
+@mixin vollkorn{
+    font-family: 'Vollkorn', serif;
+    }
+@mixin archivo{
+    font-family: 'Archivo', sans-serif;
+    
+    }
+
+
+
+
+
+body{
+    @include archivo();
+    background: $backg;
+    position: relative;
+    overflow-x: hidden;
+    
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+button{
+    border: 4px solid $red;
+    background: $red;
+    transition: all .3s;
+    color: white;
+
+    &:hover{
+       background: $backg;
+       border: 4px solid $backg;
+       color: $red;
+    }
+}
+
+
+@import './leftNavbar';
+@import './scroll';
+
+
+
+#hero{
+   .overlay{
+        @include overlay(absolute);
+        
+    }
+
+    position: relative;
+    background: url('./img/bg-7.jpg');
+   
+    background-size: cover;
+    min-height: 110vh;
+    background-repeat: no-repeat;
+    background-position: 0 75%;
+
+    
+    .row-1{
+        position: relative;
+        z-index: 2;
+        min-height: 110vh;
+    }
+    
+   
+    .hero-title{
+        text-shadow: 1px 1px 1px #000;
+    }
+}
+
+
+#menu{
+    .nav-link{
+        border-bottom: transparent 3px solid;
+        &:hover{
+            border-bottom: 3px solid rgba(249, 71, 71, 0.5);
+        }
+        color: black;
+        font-size: 16px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+    }
+    .nav-link.active{
+        border-bottom: $red 3px solid;
+    }
+    .card{
+        img{
+            height: 300px;
+            width: auto;
+            object-fit: cover;
+        }
+
+       .card-title{
+           font-weight: 700;
+       }
+    }
+}
+
+#footer{
+ overflow: hidden;
+    .h5{
+        border-bottom: 2px solid transparent;
+        transition: all .3s;
+    }
+
+    .foot-cols:hover{
+
+        .h5{
+        
+            border-bottom: 2px solid $red;
+        
+    }
+    }
+   
+}
+
+
+@import './custombreakpoints';
+
